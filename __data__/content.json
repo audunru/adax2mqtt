@@ -1,0 +1,29 @@
+{
+  "homes": [
+    {
+      "id": 1,
+      "name": "Home"
+    }
+  ],
+  "rooms": [
+    {
+      "id": 100,
+      "homeId": 1,
+      "name": "Living room",
+      "heatingEnabled": true,
+      "targetTemperature": 1700,
+      "temperature": 2123
+    }
+  ],
+  "devices": [
+    {
+      "id": 1000,
+      "homeId": 1,
+      "roomId": 100,
+      "name": "Living room",
+      "type": "Heater",
+      "energyTime": 1727958694093,
+      "energyWh": 7
+    }
+  ]
+}

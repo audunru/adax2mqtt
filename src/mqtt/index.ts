@@ -8,7 +8,7 @@ import { publishEnergyMessages } from "./messages/energy";
 
 const EVERY_TEN_MINUTES = "*/10 * * * *";
 
-const refreshEnergyData = async (): Promise<void> => {
+export const refreshEnergyData = async (): Promise<void> => {
   const data = await getContent();
 
   await publishDiscoveryMessages(data.rooms);
