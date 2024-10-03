@@ -6,7 +6,6 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "esbuild src/mqtt/index.ts --bundle --platform=node --outfile=dist/mqtt.cjs --minify --format=cjs",
-    "start": "node start.js",
     "lint": "eslint src",
     "format": "prettier --write src",
     "prepare": "cd .. && husky adax/.husky",
@@ -15,7 +14,6 @@
   "devDependencies": {
     "@eslint/js": "^9.11.1",
     "@types/eslint__js": "^8.42.3",
-    "@types/express": "^5.0.0",
     "@types/node-cron": "^3.0.11",
     "@vitest/coverage-v8": "^2.1.2",
     "esbuild": "^0.24.0",
@@ -24,9 +22,6 @@
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "msw": "^2.4.9",
-    "nodemon": "^3.1.7",
-    "npm-run-all": "^4.1.5",
-    "open": "^10.1.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "typescript": "^5.6.2",
@@ -38,7 +33,6 @@
     "axios": "^1.7.7",
     "cache-manager": "^6.1.0",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0",
     "mqtt": "^5.10.1",
     "node-cron": "^3.0.3",
     "zod": "^3.23.8"
