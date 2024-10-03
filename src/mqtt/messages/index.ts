@@ -9,10 +9,6 @@ export const refreshEnergyData = async (): Promise<void> => {
     await publishDiscoveryMessages(data.rooms);
     await publishEnergyMessages(data.rooms);
   } catch (e) {
-    if (e instanceof Error) {
-      console.error("Error during refresh of energy data: " + e.message);
-    } else {
-      console.error("Error during refresh of energy data");
-    }
+    console.error("Error during refresh of energy data", (e as Error)?.message);
   }
 };
