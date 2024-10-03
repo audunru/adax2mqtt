@@ -1,13 +1,45 @@
-TODO:
+# adax2mqtt: Publish Adax electrix heater energy consumption to MQTT
 
-- startup
-- kjør energy request 59 også
-- vurder å bruke siste item i energy_log i stedet
-- dokumentasjon
-- flytt til repo
-- start av express-server
+View your Adax electric heaters in [Home Assistant](https://www.home-assistant.io/)'s energy dashboard.
+
+This is a work in progress.
+
+# Install and run
+
+This assumes you already have Home Assistant and MQTT running.
+
+## Docker
 
 ```sh
-docker build -t adax-mqtt -f adax-mqtt.Dockerfile .
-docker run -d -e USERNAME=123 -e PASSWORD=abc --name adax-mqtt adax-mqtt
+docker run -d -e USERNAME="123" -e PASSWORD="abc" -e MQTT_BROKER_URL="mqtt://127.0.0.1:1883" audunru/adax2mqtt
+```
+
+## Docker Compose
+
+```yml
+services:
+  adax2mqtt:
+    image: audunru/adax2mqtt
+    environment:
+      USERNAME: "username" # Your Adax API username/id
+      PASSWORD: "12345" # Your Adax API token
+      MQTT_BROKER_URL: "mqtt://127.0.0.1:1883"
+```
+
+# Development
+
+## Node
+
+```sh
+cp .env.example .env # Edit the values in .env afterwards
+npm i
+npm run build
+node dist/mqtt.cjs
+```
+
+## Docker
+
+```sh
+docker build -t adax2mqtt-dev .
+docker run -d -e USERNAME="123" -e PASSWORD="abc" -e MQTT_BROKER_URL="mqtt://127.0.0.1:1883" --name adax2mqtt-dev adax2mqtt-dev
 ```
