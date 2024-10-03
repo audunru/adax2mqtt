@@ -1,6 +1,6 @@
 import { createCache } from "cache-manager";
 
-import { publish } from "../client";
+import { publishAsync } from "../client";
 import { Publishable } from "../types";
 import { getTopic, RoomType } from "../utils";
 
@@ -29,7 +29,7 @@ export const publishDiscoveryMessages = async (
   for (const room of rooms) {
     if ((await discoveryCache.get(`room_${room.id}`)) === null) {
       const { topic, message } = getDiscoveryMessage(room);
-      publish(topic, message);
+      await publishAsync(topic, message);
 
       console.info(`Published discovery message to ${topic}`);
 
