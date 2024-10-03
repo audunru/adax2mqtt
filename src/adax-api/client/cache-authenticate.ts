@@ -39,7 +39,7 @@ export const authenticate = async (): Promise<string> => {
     } catch (e) {
       // Do not rethrow, if a token can not be obtained with a refresh token,
       // a new token should be retrieved instead.
-      console.error(e);
+      console.error((e as Error)?.message);
     }
   }
 
