@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/audunru/adax2mqtt/compare/v0.2.2...v0.2.3) (2024-10-03)
+
+
+### Miscellaneous Chores
+
+* release 0.2.3 ([cf4e0ca](https://github.com/audunru/adax2mqtt/commit/cf4e0ca2454e109f2f885c8eb7706c55d9b22d16))
+
 ## [0.2.2](https://github.com/audunru/adax2mqtt/compare/v0.2.1...v0.2.2) (2024-10-03)
 
 
