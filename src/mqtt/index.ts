@@ -30,3 +30,5 @@ cron.schedule(process.env.MQTT_CRON_SCHEDULE ?? EVERY_TEN_MINUTES, () => {
 
   void refresh();
 });
+
+void refreshEnergyData();
