@@ -1,0 +1,12 @@
+# Ignore everything
+
+**
+
+# Whitelist specific files or directories
+
+!.dockerignore
+!Dockerfile
+!package.json
+!package-lock.json
+!src/
+!tsconfig.json
