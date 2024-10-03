@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     setupFiles: "./setupTests.ts",
     coverage: {
-      exclude: ["dist", "dist-dev", "*.{js,ts,mjs}"],
+      exclude: ["dist", "*.{js,ts,mjs}"],
     },
   },
 });
