@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.2.4](https://github.com/audunru/adax2mqtt/compare/v0.2.3...v0.2.4) (2024-10-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename env variables for username/password
+
+### Features
+
+* run once on startup ([e815e63](https://github.com/audunru/adax2mqtt/commit/e815e63559b4d4e31934f642cd1c57b10d45b2e1))
+
+
+### Bug Fixes
+
+* rename env variables for username/password ([db937e0](https://github.com/audunru/adax2mqtt/commit/db937e0808db1c7bff784fa1fcf71733c68e29a1))
+
+
+### Miscellaneous Chores
+
+* release 0.2.4 ([324230e](https://github.com/audunru/adax2mqtt/commit/324230e31e2b6b3709790bc6603a78a01b08cebf))
+
 ## [0.2.3](https://github.com/audunru/adax2mqtt/compare/v0.2.2...v0.2.3) (2024-10-03)
 
 
