@@ -24,9 +24,7 @@ export const authenticate = async (): Promise<AuthenticationType> => {
 
     return authentication.parse(response.data);
   } catch (e) {
-    console.error(e);
-
-    throw new Error("Could not obtain access token");
+    throw new Error("Could not obtain access token: " + (e as Error)?.message);
   }
 };
 
@@ -46,8 +44,8 @@ export const refresh = async (
 
     return authentication.parse(response.data);
   } catch (e) {
-    console.error(e);
-
-    throw new Error("Could not obtain refreshed token");
+    throw new Error(
+      "Could not obtain refreshed token: " + (e as Error)?.message,
+    );
   }
 };

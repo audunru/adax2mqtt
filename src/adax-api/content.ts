@@ -35,8 +35,8 @@ export const getContent = async (): Promise<ContentType> => {
 
     return content.parse(response.data);
   } catch (e) {
-    console.error(e);
-
-    throw new Error("Could not get data from /rest/v1/content");
+    throw new Error(
+      "Could not get data from /rest/v1/content: " + (e as Error)?.message,
+    );
   }
 };
