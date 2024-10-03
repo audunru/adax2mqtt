@@ -1,5 +1,5 @@
 import { getEnergyLog } from "../../adax-api/energy";
-import { publish } from "../client";
+import { publishAsync } from "../client";
 import { getTopic, RoomType } from "../utils";
 
 export const publishEnergyMessages = async (
@@ -11,12 +11,12 @@ export const publishEnergyMessages = async (
 
     const energyTopic = getTopic(room, "state");
     const energyKWh = point.energyWh / 1000;
-    publish(getTopic(room, "state"), energyKWh.toString(10));
+    await publishAsync(getTopic(room, "state"), energyKWh.toString(10));
     console.info(`Published energy usage ${energyKWh} kWh to ${energyTopic}`);
 
     const lastResetTopic = getTopic(room, "last_reset");
     const lastReset = point.fromTime;
-    publish(lastResetTopic, lastReset.toISOString());
+    await publishAsync(lastResetTopic, lastReset.toISOString());
     console.info(
       `Published last reset ${lastReset.toISOString()} to ${lastResetTopic}`,
     );
