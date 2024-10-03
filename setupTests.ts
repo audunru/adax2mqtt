@@ -2,8 +2,8 @@ import { http, HttpResponse } from "msw";
 import { setupServer } from "msw/node";
 import { afterAll, afterEach, beforeAll } from "vitest";
 
-import content from "./__data__/content.json";
-import energy_log from "./__data__/energy_log.json";
+import content from "./src/__data__/content.json";
+import energy_log from "./src/__data__/energy_log.json";
 
 export const restHandlers = [
   http.post("https://api-1.adax.no/client-api/auth/token", () => {
