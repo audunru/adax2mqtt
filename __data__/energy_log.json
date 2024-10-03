@@ -1,0 +1,41 @@
+{
+  "fromTime": 1727319600000,
+  "toTime": 1727838000000,
+  "points": [
+    {
+      "fromTime": 1727319600000,
+      "toTime": 1727406000000,
+      "energyWh": 1000
+    },
+    {
+      "fromTime": 1727406000000,
+      "toTime": 1727492400000,
+      "energyWh": 2000
+    },
+    {
+      "fromTime": 1727492400000,
+      "toTime": 1727578800000,
+      "energyWh": 3000
+    },
+    {
+      "fromTime": 1727578800000,
+      "toTime": 1727665200000,
+      "energyWh": 4000
+    },
+    {
+      "fromTime": 1727665200000,
+      "toTime": 1727751600000,
+      "energyWh": 5000
+    },
+    {
+      "fromTime": 1727751600000,
+      "toTime": 1727838000000,
+      "energyWh": 6000
+    },
+    {
+      "fromTime": 1727924400000,
+      "toTime": 1728010800000,
+      "energyWh": 5123
+    }
+  ]
+}
