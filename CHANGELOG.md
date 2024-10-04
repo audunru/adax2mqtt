@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/audunru/adax2mqtt/compare/v0.2.4...v0.2.5) (2024-10-04)
+
+
+### Bug Fixes
+
+* use zod to parse config ([#13](https://github.com/audunru/adax2mqtt/issues/13)) ([c4c6d8d](https://github.com/audunru/adax2mqtt/commit/c4c6d8dcc5a43ef307921f69f34b7eadad0e497b))
+
 ## [0.2.4](https://github.com/audunru/adax2mqtt/compare/v0.2.3...v0.2.4) (2024-10-03)
 
 
