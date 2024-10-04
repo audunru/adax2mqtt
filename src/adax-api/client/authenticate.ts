@@ -1,6 +1,7 @@
 import axios from "axios";
 import z from "zod";
 
+import config from "../../mqtt/config";
 import { BASE_URL } from ".";
 
 const authentication = z.object({
@@ -14,8 +15,8 @@ export type AuthenticationType = z.infer<typeof authentication>;
 export const authenticate = async (): Promise<AuthenticationType> => {
   const form = new URLSearchParams();
   form.append("grant_type", "password");
-  form.append("username", process.env.ADAX_USERNAME);
-  form.append("password", process.env.ADAX_PASSWORD);
+  form.append("username", config.ADAX_USERNAME);
+  form.append("password", config.ADAX_PASSWORD);
 
   try {
     const response = await axios.post(`${BASE_URL}/auth/token`, form);
@@ -33,8 +34,8 @@ export const refresh = async (
 ): Promise<AuthenticationType> => {
   const form = new URLSearchParams();
   form.append("grant_type", "refresh_token");
-  form.append("username", process.env.ADAX_USERNAME);
-  form.append("password", process.env.ADAX_PASSWORD);
+  form.append("username", config.ADAX_USERNAME);
+  form.append("password", config.ADAX_PASSWORD);
   form.append("refresh_token", refreshToken);
 
   try {
