@@ -1,6 +1,8 @@
 import mqtt from "mqtt";
 
-const client = mqtt.connect(process.env.MQTT_BROKER_URL);
+import config from "./config";
+
+const client = mqtt.connect(config.MQTT_BROKER_URL);
 
 export const publishAsync = async (
   topic: string,
