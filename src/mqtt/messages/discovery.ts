@@ -11,10 +11,11 @@ const getDiscoveryMessage = (room: RoomType): Publishable => {
     name: `${room.name} Electric Consumption [kWh]`,
     unique_id: `adax_room_${room.id}_electric_consumption`,
     state_topic: getTopic(room, "state"),
-    last_reset_topic: getTopic(room, "last_reset"),
     unit_of_measurement: "kWh",
     device_class: "energy",
-    state_class: "total_increasing",
+    state_class: "total",
+    value_template: "{{ value_json.value }}",
+    last_reset_value_template: "{{ value_json.last_reset }}",
   };
 
   return {
