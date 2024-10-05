@@ -1,13 +1,15 @@
 import { getContent } from "../../adax-api/content";
-import { publishDiscoveryMessages } from "./discovery";
-import { publishEnergyMessages } from "./energy";
+import * as device from "./device";
+import * as room from "./room";
 
 export const refreshEnergyData = async (): Promise<void> => {
   try {
     const data = await getContent();
 
-    await publishDiscoveryMessages(data.rooms);
-    await publishEnergyMessages(data.rooms);
+    await room.publishDiscoveryMessages(data.rooms);
+    await device.publishDiscoveryMessages(data.devices);
+    await room.publishEnergyMessages(data.rooms);
+    await device.publishEnergyMessages(data.devices);
   } catch (e) {
     console.error("Error during refresh of energy data", (e as Error)?.message);
   }
