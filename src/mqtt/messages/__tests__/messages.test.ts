@@ -27,7 +27,7 @@ describe("Given that the Adax API responds without errors", () => {
     test("It publishes expected messages to MQTT", async () => {
       await refreshEnergyData();
 
-      expect(mockPublishAsync).toHaveBeenCalledTimes(2);
+      expect(mockPublishAsync).toHaveBeenCalledTimes(4);
       expect(mockPublishAsync).toHaveBeenNthCalledWith(
         1,
         "homeassistant/sensor/adax_room_living_room/config",
@@ -45,10 +45,34 @@ describe("Given that the Adax API responds without errors", () => {
 
       expect(mockPublishAsync).toHaveBeenNthCalledWith(
         2,
+        "homeassistant/sensor/adax_device_living_room/config",
+        JSON.stringify({
+          name: "Living room Electric Consumption [kWh]",
+          unique_id: "adax_device_1000_electric_consumption",
+          state_topic: "homeassistant/sensor/adax_device_living_room/state",
+          unit_of_measurement: "kWh",
+          device_class: "energy",
+          state_class: "total",
+          value_template: "{{ value_json.value }}",
+          last_reset_value_template: "{{ value_json.last_reset }}",
+        }),
+      );
+
+      expect(mockPublishAsync).toHaveBeenNthCalledWith(
+        3,
         "homeassistant/sensor/adax_room_living_room/state",
         JSON.stringify({
           value: 5.123,
           last_reset: "2024-10-03T03:00:00.000Z",
+        }),
+      );
+
+      expect(mockPublishAsync).toHaveBeenNthCalledWith(
+        4,
+        "homeassistant/sensor/adax_device_living_room/state",
+        JSON.stringify({
+          value: 0.007,
+          last_reset: "2024-10-03T12:00:00.000Z",
         }),
       );
     });
@@ -101,7 +125,7 @@ describe("Given that the energy_log endpoint responds with an error", () => {
 
       await refreshEnergyData();
 
-      expect(mockPublishAsync).toHaveBeenCalledTimes(1);
+      expect(mockPublishAsync).toHaveBeenCalledTimes(2);
       expect(mockPublishAsync).toHaveBeenCalledWith(
         "homeassistant/sensor/adax_room_living_room/config",
         JSON.stringify({
