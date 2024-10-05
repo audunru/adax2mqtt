@@ -4,7 +4,7 @@
   "version": "0.2.5",
   "type": "module",
   "scripts": {
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist && tsc",
     "build": "esbuild src/mqtt/index.ts --bundle --platform=node --outfile=dist/mqtt.cjs --minify --format=cjs",
     "lint": "eslint src",
     "format": "prettier --write src",

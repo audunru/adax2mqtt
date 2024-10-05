@@ -4,10 +4,7 @@ import { ContentType } from "../adax-api/content";
 
 export type RoomType = ContentType["rooms"][0];
 
-export const getTopic = (
-  room: RoomType,
-  topic: "config" | "state" | "last_reset",
-): string => {
+export const getTopic = (room: RoomType, topic: "config" | "state"): string => {
   const roomName = slugify(room.name, {
     separator: "_",
   });
