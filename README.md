@@ -33,8 +33,7 @@ services:
 ```sh
 cp .env.example .env # Edit the values in .env afterwards
 npm i
-npm run build
-node dist/mqtt.cjs
+npm run dev
 ```
 
 ## Docker
