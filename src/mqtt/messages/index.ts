@@ -7,8 +7,8 @@ export const refreshEnergyData = async (): Promise<void> => {
     const data = await getContent();
 
     await room.publishDiscoveryMessages(data.rooms);
-    await room.publishEnergyMessages(data.rooms);
     await device.publishDiscoveryMessages(data.devices);
+    await room.publishEnergyMessages(data.rooms);
     await device.publishEnergyMessages(data.devices);
   } catch (e) {
     console.error("Error during refresh of energy data", (e as Error)?.message);
