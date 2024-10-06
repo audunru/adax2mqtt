@@ -20,14 +20,7 @@ const updateCache = async (auth: AuthenticationType): Promise<void> => {
   await cache.set(REFRESH_TOKEN_KEY, auth.refresh_token);
 };
 
-export const authenticate = async (): Promise<string> => {
-  // 1. Use existing access token
-  const accessToken = await cache.get<string>(ACCESS_TOKEN_KEY);
-  if (accessToken !== null) {
-    return accessToken;
-  }
-
-  // 2. Access token may be expired, use refresh token to get a new one
+const getAccessTokenWithRefreshToken = async (): Promise<string | null> => {
   const refreshToken = await cache.get<string>(REFRESH_TOKEN_KEY);
 
   if (refreshToken !== null) {
@@ -43,9 +36,29 @@ export const authenticate = async (): Promise<string> => {
     }
   }
 
-  // 3. Cache is empty, get new access token
+  return null;
+};
+
+export const getNewAccessToken = async (): Promise<string> => {
   const auth = await baseAuthenticate();
   await updateCache(auth);
 
   return auth.access_token;
+};
+
+export const authenticate = async (): Promise<string> => {
+  // 1. Use existing access token
+  let accessToken = await cache.get<string>(ACCESS_TOKEN_KEY);
+  if (accessToken !== null) {
+    return accessToken;
+  }
+
+  // 2. Access token may be expired, use refresh token to get a new one
+  accessToken = await getAccessTokenWithRefreshToken();
+  if (accessToken !== null) {
+    return accessToken;
+  }
+
+  // 3. Cache is empty, get new access token
+  return getNewAccessToken();
 };
