@@ -1,10 +1,40 @@
+import axios from "axios";
 import { createCache } from "cache-manager";
+import z from "zod";
 
-import {
-  authenticate as baseAuthenticate,
-  AuthenticationType,
-  refresh,
-} from "./authenticate";
+import config from "../../mqtt/config";
+import { BASE_URL } from ".";
+
+const authentication = z.object({
+  access_token: z.string(),
+  refresh_token: z.string(),
+  expires_in: z.number(),
+});
+
+type AuthenticationType = z.infer<typeof authentication>;
+
+const getAccessToken = async (
+  refreshToken?: string,
+): Promise<AuthenticationType> => {
+  const form = new URLSearchParams();
+  form.append("grant_type", refreshToken ? "refresh_token" : "password");
+  form.append("username", config.ADAX_USERNAME);
+  form.append("password", config.ADAX_PASSWORD);
+
+  if (refreshToken) {
+    form.append("refresh_token", refreshToken);
+  }
+
+  try {
+    const response = await axios.post(`${BASE_URL}/auth/token`, form);
+
+    console.info("Obtained access token");
+
+    return authentication.parse(response.data);
+  } catch (e) {
+    throw new Error("Could not obtain access token: " + (e as Error)?.message);
+  }
+};
 
 const cache = createCache();
 
@@ -25,7 +55,7 @@ const getAccessTokenWithRefreshToken = async (): Promise<string | null> => {
 
   if (refreshToken !== null) {
     try {
-      const auth = await refresh(refreshToken);
+      const auth = await getAccessToken(refreshToken);
       await updateCache(auth);
 
       return auth.access_token;
@@ -40,13 +70,13 @@ const getAccessTokenWithRefreshToken = async (): Promise<string | null> => {
 };
 
 export const getNewAccessToken = async (): Promise<string> => {
-  const auth = await baseAuthenticate();
+  const auth = await getAccessToken();
   await updateCache(auth);
 
   return auth.access_token;
 };
 
-export const authenticate = async (): Promise<string> => {
+export const getCachedAccessToken = async (): Promise<string> => {
   // 1. Use existing access token
   let accessToken = await cache.get<string>(ACCESS_TOKEN_KEY);
   if (accessToken !== null) {

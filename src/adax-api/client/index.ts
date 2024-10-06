@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosRequestConfig } from "axios";
 
-import { authenticate, getNewAccessToken } from "./cache-authenticate";
+import { getCachedAccessToken, getNewAccessToken } from "./authentication";
 
 export const BASE_URL = "https://api-1.adax.no/client-api";
 
@@ -9,7 +9,7 @@ const api = axios.create({
 });
 
 api.interceptors.request.use(async (config) => {
-  const access_token = await authenticate();
+  const access_token = await getCachedAccessToken();
   config.headers.Authorization = `Bearer ${access_token}`;
 
   return config;
