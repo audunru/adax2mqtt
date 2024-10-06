@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/audunru/adax2mqtt/compare/v0.2.5...v0.3.0) (2024-10-06)
+
+
+### Features
+
+* publish energy messages for devices ([#18](https://github.com/audunru/adax2mqtt/issues/18)) ([53a312f](https://github.com/audunru/adax2mqtt/commit/53a312f73bfdc799e5577db6175413c7a3d2cb4f))
+
+
+### Bug Fixes
+
+* retrieve new access token in case of 401 errors ([#20](https://github.com/audunru/adax2mqtt/issues/20)) ([28dfa70](https://github.com/audunru/adax2mqtt/commit/28dfa706f76eff3e68194aad318f848bf64c5469))
+
 ## [0.2.5](https://github.com/audunru/adax2mqtt/compare/v0.2.4...v0.2.5) (2024-10-04)
 
 
