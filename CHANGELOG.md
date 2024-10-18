@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/audunru/adax2mqtt/compare/v0.3.0...v0.4.0) (2024-10-18)
+
+
+### Features
+
+* config supports setting mqtt username/password ([#23](https://github.com/audunru/adax2mqtt/issues/23)) ([73b8388](https://github.com/audunru/adax2mqtt/commit/73b8388aaacb003a360f8a054cc0c5c953c732cf))
+
 ## [0.3.0](https://github.com/audunru/adax2mqtt/compare/v0.2.5...v0.3.0) (2024-10-06)
 
 
