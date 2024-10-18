@@ -8,6 +8,8 @@ const configSchema = z.object({
   ADAX_USERNAME: z.string().min(1),
   ADAX_PASSWORD: z.string().min(1),
   MQTT_BROKER_URL: z.string().min(1),
+  MQTT_USERNAME: z.string().optional(),
+  MQTT_PASSWORD: z.string().optional(),
   MQTT_CRON_SCHEDULE: z.string().optional(),
 });
 
