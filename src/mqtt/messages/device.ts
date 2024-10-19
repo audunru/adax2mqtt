@@ -2,13 +2,17 @@ import { createCache } from "cache-manager";
 
 import { DeviceType } from "../../adax-api/types";
 import { publishAsync } from "../client";
-import { EnergyMessage, Publishable } from "../types";
+import {
+  EnergyMessage,
+  Publishable,
+  TotalIncreasingDiscoveryMessage,
+} from "../types";
 import { getTopic } from "../utils";
 
 const discoveryCache = createCache();
 
 const getDiscoveryMessage = (device: DeviceType): Publishable => {
-  const message = {
+  const message: TotalIncreasingDiscoveryMessage = {
     name: `${device.name} Electric Consumption [kWh]`,
     unique_id: `adax_device_${device.id}_electric_consumption`,
     state_topic: getTopic(device.name, "device", "state"),
