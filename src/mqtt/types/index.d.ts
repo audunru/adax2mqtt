@@ -5,5 +5,5 @@ export type Publishable = {
 
 export type EnergyMessage = {
   value: number;
-  last_reset: string;
+  last_reset?: string;
 };

@@ -14,9 +14,8 @@ const getDiscoveryMessage = (device: DeviceType): Publishable => {
     state_topic: getTopic(device.name, "device", "state"),
     unit_of_measurement: "kWh",
     device_class: "energy",
-    state_class: "total",
+    state_class: "total_increasing",
     value_template: "{{ value_json.value }}",
-    last_reset_value_template: "{{ value_json.last_reset }}",
   };
 
   return {
@@ -42,12 +41,9 @@ export const publishDiscoveryMessages = async (
 
 const getEnergyMessage = (device: DeviceType): Publishable => {
   const energyKWh = device.energyWh / 1000;
-  device.energyTime.setMinutes(0, 0, 0);
-  const lastReset = device.energyTime.toISOString();
 
   const message: EnergyMessage = {
     value: energyKWh,
-    last_reset: lastReset,
   };
 
   return {
