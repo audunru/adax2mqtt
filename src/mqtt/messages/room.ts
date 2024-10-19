@@ -3,13 +3,13 @@ import { createCache } from "cache-manager";
 import { getEnergyLog } from "../../adax-api/energy";
 import { RoomType } from "../../adax-api/types";
 import { publishAsync } from "../client";
-import { EnergyMessage, Publishable } from "../types";
+import { EnergyMessage, Publishable, TotalDiscoveryMessage } from "../types";
 import { getTopic } from "../utils";
 
 const discoveryCache = createCache();
 
 const getDiscoveryMessage = (room: RoomType): Publishable => {
-  const message = {
+  const message: TotalDiscoveryMessage = {
     name: `${room.name} Electric Consumption [kWh]`,
     unique_id: `adax_room_${room.id}_electric_consumption`,
     state_topic: getTopic(room.name, "room", "state"),
