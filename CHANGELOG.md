@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/audunru/adax2mqtt/compare/v0.4.0...v0.4.1) (2024-10-19)
+
+
+### Bug Fixes
+
+* state class for devices changed to total_increasing ([#26](https://github.com/audunru/adax2mqtt/issues/26)) ([ce9b155](https://github.com/audunru/adax2mqtt/commit/ce9b15541499edcfa5829aeaffe3a61a747e451a))
+
 ## [0.4.0](https://github.com/audunru/adax2mqtt/compare/v0.3.0...v0.4.0) (2024-10-18)
 
 
