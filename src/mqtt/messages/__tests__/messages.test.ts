@@ -52,9 +52,8 @@ describe("Given that the Adax API responds without errors", () => {
           state_topic: "homeassistant/sensor/adax_device_living_room/state",
           unit_of_measurement: "kWh",
           device_class: "energy",
-          state_class: "total",
+          state_class: "total_increasing",
           value_template: "{{ value_json.value }}",
-          last_reset_value_template: "{{ value_json.last_reset }}",
         }),
       );
 
@@ -72,7 +71,6 @@ describe("Given that the Adax API responds without errors", () => {
         "homeassistant/sensor/adax_device_living_room/state",
         JSON.stringify({
           value: 0.007,
-          last_reset: "2024-10-03T12:00:00.000Z",
         }),
       );
     });
