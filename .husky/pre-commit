@@ -1,2 +1,1 @@
-cd adax
 npx lint-staged
