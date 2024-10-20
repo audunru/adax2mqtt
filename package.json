@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "tsx --watch src/mqtt/index.ts",
-    "prebuild": "rimraf dist && tsc",
+    "prebuild": "rimraf dist && npm run typecheck",
     "build": "esbuild src/mqtt/index.ts --bundle --platform=node --outfile=dist/mqtt.cjs --minify --format=cjs",
     "lint": "eslint src",
     "format": "prettier --write src",
-    "prepare": "cd .. && husky adax/.husky",
-    "test": "vitest --coverage"
+    "prepare": "husky",
+    "test": "vitest --coverage",
+    "typecheck": "tsc"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
@@ -19,6 +20,8 @@
     "@vitest/coverage-v8": "^2.1.2",
     "esbuild": "^0.24.0",
     "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
