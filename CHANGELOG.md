@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/audunru/adax2mqtt/compare/v0.4.1...v0.4.2) (2024-10-21)
+
+
+### Bug Fixes
+
+* log url with room id in case of errors ([628301e](https://github.com/audunru/adax2mqtt/commit/628301ead6d8d7d818ad7212fef56d572e9d7da9))
+
 ## [0.4.1](https://github.com/audunru/adax2mqtt/compare/v0.4.0...v0.4.1) (2024-10-19)
 
 
