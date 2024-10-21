@@ -17,13 +17,12 @@ const energy = z.object({
 export type EnergyType = z.infer<typeof energy>;
 
 export const getEnergyLog = async (roomId: number): Promise<EnergyType> => {
+  const url = `/rest/v1/energy_log/${roomId}`;
   try {
-    const response = await api(`/rest/v1/energy_log/${roomId}`);
+    const response = await api(url);
 
     return energy.parse(response.data);
   } catch (e) {
-    throw new Error(
-      "Could not get data from /rest/v1/energy_log: " + (e as Error)?.message,
-    );
+    throw new Error(`Could not get data from ${url}: ` + (e as Error)?.message);
   }
 };
