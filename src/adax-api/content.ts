@@ -30,13 +30,12 @@ const content = z.object({
 export type ContentType = z.infer<typeof content>;
 
 export const getContent = async (): Promise<ContentType> => {
+  const url = "/rest/v1/content?withEnergy=1";
   try {
     const response = await api.get("/rest/v1/content?withEnergy=1");
 
     return content.parse(response.data);
   } catch (e) {
-    throw new Error(
-      "Could not get data from /rest/v1/content: " + (e as Error)?.message,
-    );
+    throw new Error(`Could not get data from ${url}: ` + (e as Error)?.message);
   }
 };
