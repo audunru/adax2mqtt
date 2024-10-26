@@ -32,7 +32,7 @@ export const publishDiscoveryMessages = async (
   for (const room of rooms) {
     if ((await discoveryCache.get(`room_${room.id}`)) === null) {
       const { topic, message } = getDiscoveryMessage(room);
-      await publishAsync(topic, message);
+      await publishAsync(topic, message, { retain: true });
 
       console.info(`Published discovery message to ${topic}`);
 

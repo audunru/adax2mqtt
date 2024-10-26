@@ -34,7 +34,7 @@ export const publishDiscoveryMessages = async (
   for (const device of devices) {
     if ((await discoveryCache.get(`device_${device.id}`)) === null) {
       const { topic, message } = getDiscoveryMessage(device);
-      await publishAsync(topic, message);
+      await publishAsync(topic, message, { retain: true });
 
       console.info(`Published discovery message to ${topic}`);
 
