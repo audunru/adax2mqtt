@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/audunru/adax2mqtt/compare/v0.4.2...v0.4.3) (2024-10-26)
+
+
+### Bug Fixes
+
+* retain discovery messages ([#31](https://github.com/audunru/adax2mqtt/issues/31)) ([a0ae865](https://github.com/audunru/adax2mqtt/commit/a0ae8653b616b5c3ed2c44798474fdb80d563671))
+
 ## [0.4.2](https://github.com/audunru/adax2mqtt/compare/v0.4.1...v0.4.2) (2024-10-21)
 
 
