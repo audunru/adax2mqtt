@@ -63,9 +63,13 @@ export const publishEnergyMessages = async (
   rooms: RoomType[],
 ): Promise<void> => {
   for (const room of rooms) {
-    const { topic, message } = await getEnergyMessage(room);
-    await publishAsync(topic, message);
+    try {
+      const { topic, message } = await getEnergyMessage(room);
+      await publishAsync(topic, message);
 
-    console.info(`Published energy message ${message} to ${topic}`);
+      console.info(`Published energy message ${message} to ${topic}`);
+    } catch (e) {
+      console.error("Failed to publish energy message", (e as Error)?.message);
+    }
   }
 };
