@@ -20,10 +20,11 @@ vi.mock("cache-manager", () => ({
   }),
 }));
 
+afterEach(() => {
+  mockPublishAsync.mockClear();
+});
+
 describe("Given that the Adax API responds without errors", () => {
-  afterEach(() => {
-    mockPublishAsync.mockClear();
-  });
   describe("When refreshEnergyData is called", () => {
     test("It publishes expected messages to MQTT", async () => {
       await refreshEnergyData();
