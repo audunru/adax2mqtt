@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.4](https://github.com/audunru/adax2mqtt/compare/v0.4.3...v0.4.4) (2024-11-21)
+
+
+### Bug Fixes
+
+* continue to other rooms if one api call fails ([#33](https://github.com/audunru/adax2mqtt/issues/33)) ([b132a49](https://github.com/audunru/adax2mqtt/commit/b132a4979e7f4927147d8c608e92933844a8ef50))
+
 ## [0.4.3](https://github.com/audunru/adax2mqtt/compare/v0.4.2...v0.4.3) (2024-10-26)
 
 
