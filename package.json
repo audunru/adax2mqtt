@@ -36,7 +36,7 @@
   "dependencies": {
     "@sindresorhus/slugify": "^2.2.1",
     "axios": "^1.7.7",
-    "cache-manager": "^6.1.0",
+    "cache-manager": "^6.4.0",
     "dotenv": "^16.4.7",
     "mqtt": "^5.10.1",
     "node-cron": "^3.0.3",
