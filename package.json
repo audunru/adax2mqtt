@@ -14,32 +14,32 @@
     "typecheck": "tsc"
   },
   "devDependencies": {
-    "@eslint/js": "^9.11.1",
+    "@eslint/js": "^9.20.0",
     "@types/eslint__js": "^8.42.3",
     "@types/node-cron": "^3.0.11",
     "@vitest/coverage-v8": "^2.1.9",
-    "esbuild": "^0.24.2",
-    "eslint": "^9.19.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.20.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "husky": "^9.1.6",
+    "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
-    "msw": "^2.4.9",
+    "msw": "^2.7.0",
     "prettier": "^3.4.2",
     "rimraf": "^6.0.1",
-    "tsx": "^4.19.1",
-    "typescript": "^5.6.2",
-    "typescript-eslint": "^8.22.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0",
     "vitest": "^2.1.9"
   },
   "dependencies": {
     "@sindresorhus/slugify": "^2.2.1",
-    "axios": "^1.7.7",
+    "axios": "^1.7.9",
     "cache-manager": "^6.4.0",
     "dotenv": "^16.4.7",
-    "mqtt": "^5.10.1",
+    "mqtt": "^5.10.3",
     "node-cron": "^3.0.3",
-    "zod": "^3.23.8"
+    "zod": "^3.24.1"
   }
 }
