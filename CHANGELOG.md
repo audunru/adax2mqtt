@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.5](https://github.com/audunru/adax2mqtt/compare/v0.4.4...v0.4.5) (2025-03-08)
+
+
+### Miscellaneous Chores
+
+* release 0.4.5 ([7863be2](https://github.com/audunru/adax2mqtt/commit/7863be28a48b66faa3a5e64ff7486df9d6634240))
+
 ## [0.4.4](https://github.com/audunru/adax2mqtt/compare/v0.4.3...v0.4.4) (2024-11-21)
 
 
