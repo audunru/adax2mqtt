@@ -1,5 +1,42 @@
 # Changelog
 
+## [0.4.8](https://github.com/audunru/adax2mqtt/compare/v0.4.8...v0.4.8) (2025-09-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename env variables for username/password
+
+### Features
+
+* config supports setting mqtt username/password ([#23](https://github.com/audunru/adax2mqtt/issues/23)) ([0cedccb](https://github.com/audunru/adax2mqtt/commit/0cedccbbc85b4173a8492fffcd3e308bbb3fcfbb))
+* first commit with code ([2c1b59b](https://github.com/audunru/adax2mqtt/commit/2c1b59bc9a0cf7ed88fd1d75eb7697105c298e43))
+* publish energy messages for devices ([#18](https://github.com/audunru/adax2mqtt/issues/18)) ([8f8f585](https://github.com/audunru/adax2mqtt/commit/8f8f585fde7c4ff0b74b30c00a847e5c29498a1c))
+* run once on startup ([76c1873](https://github.com/audunru/adax2mqtt/commit/76c187316ade7302515daefc0faa6c023664e334))
+
+
+### Bug Fixes
+
+* continue to other rooms if one api call fails ([#33](https://github.com/audunru/adax2mqtt/issues/33)) ([9ddf358](https://github.com/audunru/adax2mqtt/commit/9ddf3585943b894cda8efcf087015f2a29800931))
+* log url with room id in case of errors ([d32575b](https://github.com/audunru/adax2mqtt/commit/d32575bd7c2f220d26bba772aa1151e9b329f57b))
+* rename env variables for username/password ([d0f72df](https://github.com/audunru/adax2mqtt/commit/d0f72df9c4f471b5e84a426172f8d5aa9bf4fa75))
+* retain discovery messages ([#31](https://github.com/audunru/adax2mqtt/issues/31)) ([ecabe47](https://github.com/audunru/adax2mqtt/commit/ecabe479dec6fcea89117f85bdde141d1dc2d190))
+* retrieve new access token in case of 401 errors ([#20](https://github.com/audunru/adax2mqtt/issues/20)) ([12293ff](https://github.com/audunru/adax2mqtt/commit/12293ffc2fd2018f306056e0ea3cec00c371d9b5))
+* state class for devices changed to total_increasing ([#26](https://github.com/audunru/adax2mqtt/issues/26)) ([6232db1](https://github.com/audunru/adax2mqtt/commit/6232db1592ee9cc27235c3dcb23a972b5af329cf))
+* use zod to parse config ([#13](https://github.com/audunru/adax2mqtt/issues/13)) ([52b3aab](https://github.com/audunru/adax2mqtt/commit/52b3aab4651520d04be3b1a5762cbff66ea6f7b1))
+
+
+### Miscellaneous Chores
+
+* release 0.2.1 ([52789e2](https://github.com/audunru/adax2mqtt/commit/52789e22af0c59c48f7db1d4beacc0abebf8ffa7))
+* release 0.2.2 ([466f57c](https://github.com/audunru/adax2mqtt/commit/466f57cc48272853f28dc98a99a870b42981aeef))
+* release 0.2.3 ([68a9d9d](https://github.com/audunru/adax2mqtt/commit/68a9d9da68246bb1296d63aed31e85ed4291d3ac))
+* release 0.2.4 ([f5f6c3d](https://github.com/audunru/adax2mqtt/commit/f5f6c3d8168c68f62e98fcf3fe46152cfe6cc5af))
+* release 0.4.5 ([0c214d6](https://github.com/audunru/adax2mqtt/commit/0c214d6a890061bf6ae802e9a06b04a564c616db))
+* release 0.4.6 ([c19fe51](https://github.com/audunru/adax2mqtt/commit/c19fe512bec4c2a2f735903dc5e776d0bb834fb8))
+* release 0.4.7 ([7002199](https://github.com/audunru/adax2mqtt/commit/700219953921823a85bbb00c798fac4987142f69))
+* release 0.4.8 ([f8244ae](https://github.com/audunru/adax2mqtt/commit/f8244aeaa886311f78f344924113cd0a7c558e19))
+
 ## [0.4.8](https://github.com/audunru/adax2mqtt/compare/v0.4.7...v0.4.8) (2025-03-08)
 
 
