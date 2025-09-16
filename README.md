@@ -1,5 +1,7 @@
 # adax2mqtt: Publish Adax electrix heater energy consumption to MQTT
 
+This repo is now archived, because the built-in [Adax integration](https://www.home-assistant.io/integrations/adax/) now has support for energy monitoring.
+
 View your Adax electric heaters in [Home Assistant](https://www.home-assistant.io/)'s energy dashboard.
 
 This is a work in progress.
