@@ -1,4 +1,4 @@
-FROM node:24-alpine AS build
+FROM node:25-alpine AS build
   WORKDIR /app
   COPY package*.json ./
   ENV HUSKY=0
@@ -6,7 +6,7 @@ FROM node:24-alpine AS build
   COPY . .
   RUN npm run build
 
-FROM node:24-alpine
+FROM node:25-alpine
   WORKDIR /app
   COPY --from=build /app/dist /app/dist
 
